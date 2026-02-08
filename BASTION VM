@@ -1,0 +1,7 @@
+BASTION VM
+
+cd /opt/kickstart-azure
+
+az deployment group create -g sloopstash-stg -f vm/bastion.json
+
+4.187.255.125

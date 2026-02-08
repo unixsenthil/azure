@@ -1,0 +1,11 @@
+Connect to AZURE VM
+
+export AZURE_VM_PUBLIC_IP=<PUBLIC_IP>
+
+export AZURE_VM_PUBLIC_IP=4.187.255.125
+
+eval `ssh-agent -s`
+
+ssh-add ~/sloopstash-stg-ssh-key
+
+ssh -A azureuser@$AZURE_VM_PUBLIC_IP

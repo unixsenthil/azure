@@ -1,0 +1,19 @@
+NAT Gateway
+
+az network nat gateway create \
+-n ng \
+-g sloopstash-stg \
+-l centralindia \
+--public-ip-addresses nat-pip \
+--idle-timeout 4 \
+--tags 'Name=ng' 'Environment=stg' 'Region=centralindia' 'Organization=sloopstash'
+
+
+SUBNETS:
+
+az network vnet subnet update -n container-s2-vnet-kubernetes-sn-1 -g sloopstash-stg --vnet-name vnet --nat-gateway ng
+
+
+az network vnet subnet update -n container-s2-vnet-kubernetes-sn-2 -g sloopstash-stg --vnet-name vnet --nat-gateway ng
+
+

@@ -1,0 +1,43 @@
+PUBLIC IP 
+
+az network public-ip create \
+-n bastion-pip \
+-g sloopstash-stg \
+-l centralindia \
+--version IPv4 \
+--sku Standard \
+-z 1 2 3 \
+--tier Regional \
+--allocation-method Static \
+--idle-timeout 4 \
+--ddos-protection-mode VirtualNetworkInherited \
+--tags 'Name=bastion-pip' 'Environment=stg' 'Region=centralindia' 'Organization=sloopstash'
+
+
+az network public-ip create \
+-n nat-pip \
+-g sloopstash-stg \
+-l centralindia \
+--version IPv4 \
+--sku Standard \
+-z 1 2 3 \
+--tier Regional \
+--allocation-method Static \
+--idle-timeout 4 \
+--ddos-protection-mode VirtualNetworkInherited \
+--tags 'Name=nat-pip' 'Environment=stg' 'Region=centralindia' 'Organization=sloopstash'
+
+az network public-ip create \
+-n loadbalancer-pip \
+-g sloopstash-stg \
+-l centralindia \
+--version IPv4 \
+--sku Standard \
+-z 1 2 3 \
+--tier Regional \
+--allocation-method Static \
+--idle-timeout 4 \
+--ddos-protection-mode VirtualNetworkInherited \
+--tags 'Name=loadbalancer-pip' 'Environment=stg' 'Region=centralindia' 'Organization=sloopstash'
+
+
